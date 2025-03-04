@@ -5,11 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #4CAF50, #2E8B57);
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            background: url('/flat-lay-back-school-items-frame.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 20px;
         }
 
         .container {
@@ -49,7 +51,7 @@
     <div class="container">
         <h1>Welcome To Online Test</h1>
         <div class="button-container">
-            <form action="">
+            <form action="/Quiz" method="get">
                 <button type="submit">Start</button>
             </form>
             <form action="/addQuestions">

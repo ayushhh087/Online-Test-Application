@@ -1,7 +1,5 @@
 package com.aa.Model;
 
-import java.util.List;
-
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,8 +24,8 @@ import lombok.Setter;
 @Data
 public class QuestionModel {
 	
-	@SequenceGenerator(name = "g1" ,initialValue = 1 ,allocationSize = 1)
-	@GeneratedValue(generator = "g1" ,strategy =  GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "g1", initialValue = 1, allocationSize = 1)
+	@GeneratedValue(generator = "g1", strategy = GenerationType.SEQUENCE)
 	@Id
 	private Long id;
 	
@@ -37,7 +35,7 @@ public class QuestionModel {
 	
 	@NonNull
 	@Column(name="Options")
-	private List<String> options;
+	private String options; // Store as "A,B,C,D" in DB
 	
 	@NonNull
 	@Column(name="RightAns")
@@ -45,4 +43,9 @@ public class QuestionModel {
 	
 	@Transient
 	private long qId;
+
+	// Convert comma-separated options into List<String>
+//	public List<String> getOptionsAsList() {
+//	    return Arrays.asList(options.split(","));
+	
 }
